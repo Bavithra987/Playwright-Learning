@@ -6,7 +6,9 @@ await page.goto('https://leaftaps.com/opentaps/control/login')
 await page.getByLabel('Username', {exact:true}).fill('democsr')
 await page.getByLabel('Password', {exact:true}).fill('crmsfa')
 await page.getByRole('button', {name:'Login'}).click()
-await expect (page.getByAltText('CRM/SFA')).toBeVisible
+await page.getByText('CRM/SFA').click()
 await page.waitForTimeout(2000)
+await page.getByRole('link',{name: 'Leads'}).click()
+await page.getByRole('link', {name:'Create Lead'}).click()
 }
 )
